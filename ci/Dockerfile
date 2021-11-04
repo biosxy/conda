@@ -23,6 +23,9 @@ COPY --from=buildbase /opt/conda /opt/conda
 
 ARG PYTHON_VERSION=3.8
 
+# Install conda canary in test image
+RUN conda install -c conda-canary conda
+
 COPY tests/requirements.txt /tmp
 
 # conda and test dependencies
